@@ -19,7 +19,7 @@ export class NewAccountComponent {
       name: accountName,
       status: accountStatus
     });
-    this.logger.logStatusChange(status);
+    this.logger.logStatusChange(accountStatus);
   }
 }
 
