@@ -10,7 +10,7 @@ import { LoggingService } from '../logging.service';
 export class NewAccountComponent {
   @Output() accountAdded = new EventEmitter<{name: string, status: string}>();
 
-  constructor( public Logger : LoggingService) {
+  constructor( public logger : LoggingService) {
 
   }
 
@@ -19,6 +19,7 @@ export class NewAccountComponent {
       name: accountName,
       status: accountStatus
     });
-    console.log('A server status changed, new status: ' + accountStatus);
+    this.logger.logStatusChange(status);
   }
 }
+
