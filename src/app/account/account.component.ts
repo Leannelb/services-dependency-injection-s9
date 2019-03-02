@@ -17,11 +17,15 @@ export class AccountComponent {
     public logger : LoggingService,
     private accountsService: AccountsService
     ) {
+      this.accountsService.statusUpdated.subscribe(
+        (status:string) => alert('New Status: ' + status)
+      )
 
   }
  
   onSetTo(status: string) {
     this.accountsService.updateStatus(this.id, status)
     // this.logger.logStatusChange(status)  }
+    this.accountsService.statusUpdated.emit(status)
 }
 }

@@ -11,7 +11,7 @@ import { AccountsService } from '../account/accounts.service';
 export class NewAccountComponent {
 
   constructor( 
-    private logger : LoggingService,
+    private loggingService : LoggingService,
     private accountsService: AccountsService
     ) {
 
@@ -19,7 +19,7 @@ export class NewAccountComponent {
 
   onCreateAccount(accountName: string, accountStatus: string) {
     this.accountsService.onAddAccount(accountName, accountStatus);
-    this.logger.logStatusChange(accountStatus);
+    // this.loggingService.logStatusChange(accountStatus);
   }
 }
 
