@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AccountComponent } from './account/account.component';
 import { NewAccountComponent } from './new-account/new-account.component';
 import { AccountsService } from './account/accounts.service';
+import { LoggingService } from './logging.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { AccountsService } from './account/accounts.service';
     FormsModule,
     HttpModule
   ],
-  providers: [AccountsService],
+  providers: [AccountsService, LoggingService],
+  //now we can inject a service into a service
+  //this wasnt available on a componet level - needs to be in app component 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
