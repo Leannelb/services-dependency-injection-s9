@@ -16,7 +16,7 @@ export class AccountComponent {
   constructor( public logger : LoggingService) {
 
   }
-
+ 
   onSetTo(status: string) {
     this.statusChanged.emit({id: this.id, newStatus: status});
     this.logger.logStatusChange(status)  }
